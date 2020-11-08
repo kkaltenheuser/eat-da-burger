@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text center">
+            <img src="https://static.thenounproject.com/png/98462-200.png" class="burger-image" alt="Burger" />
+            <h1 style="color:#882424c4"; text-align: center">Eat-Da-Burger</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center">
+
+
+            <h2 style="color:#882424c4"">Time To Eat!</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burger-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+        </div>
+        <div class="col-md-6 text-center">
+
+            <h2 style="color:#882424c4"">Was It Good?</h2>
+
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burger-block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 text-center">
+        <h2 style="color:#882424c4""> Add Da' Burger </h2>
+        <form class="create-form">
+
+            <div class="form-group">
+                <label style="color:#882424c4" for="bn">Burger Name:</label>
+                <input type="text" id="bn" name="name">
+            </div>
+
+            <div style="color:#882424c4"" class="form-group">
+                <label style="color:#882424c4"" for="devour"> Please select:</label><br>
+                <input style="color:#882424c4"" type="radio" name="devoured" value="0" checked> Haven't tried this one yet<br>
+                <input style="color:#882424c4"" type="radio" name="devoured" value="1"> I've already tried this one <br>
+            </div>
+
+            <button type="submit"> Select Da' Burger </button>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
