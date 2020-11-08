@@ -7,7 +7,7 @@ var router = express.Router();
 // IMPORT the models directory to use its database
 var burger = require("../models/burger.js");
 
-// CREATA all routes
+// CREATE all routes
 router.get("/", function (req, res) {
   burger.selectAll(function (data) {
     var hbsObject = {
