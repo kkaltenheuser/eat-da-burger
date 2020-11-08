@@ -1,13 +1,13 @@
-// Require express
+// REQUIRE express
 var express = require("express");
 
-//set up var for router
+// SET-UP var for router
 var router = express.Router();
 
-// Import the models directory to use its database
+// IMPORT the models directory to use its database
 var burger = require("../models/burger.js");
 
-// Create all our routes
+// CREATA all routes
 router.get("/", function (req, res) {
   burger.selectAll(function (data) {
     var hbsObject = {
@@ -18,23 +18,23 @@ router.get("/", function (req, res) {
   });
 });
 
-// Post
+// POST
 router.post("/api/burgers", function (req, res) {
   burger.insertOne(
     // set status for table
     ["name", "devoured"],
     [req.body.name, req.body.devoured],
     function (result) {
-      // Send back the ID of the new quote
+      // Send back Id
       res.json({ id: result.insertId });
     }
   );
 });
 
-// Put
+// PUT
 router.put("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
-
+  // condition of to be consumed or already consumed/devoured
   console.log("condition", condition);
 
   burger.updateOne(
@@ -44,7 +44,7 @@ router.put("/api/burgers/:id", function (req, res) {
     condition,
     function (result) {
       if (result.changedRows === 0) {
-        // If no rows were changed, then the ID must not exist, so 404
+        // If no rows were changed, then the ID is not "true", so return a 404
         return res.status(404).end();
       }
       res.status(200).end();
@@ -52,13 +52,13 @@ router.put("/api/burgers/:id", function (req, res) {
   );
 });
 
-// Delete
+// DELETE
 router.delete("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
   burger.delete(condition, function (result) {
     if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
+      // If no rows were changed, then the ID is not "true", so 404
       return res.status(404).end();
     } else {
       res.status(200).end();
@@ -66,5 +66,5 @@ router.delete("/api/burgers/:id", function (req, res) {
   });
 });
 
-// Export routes for server.js to use.
+// EXPORT routes for server
 module.exports = router;
