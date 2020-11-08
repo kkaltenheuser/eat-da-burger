@@ -1,15 +1,15 @@
 // dependencies
 
-// Require dotenv
+// designate use of dotenv
 require("dotenv").config();
 
-// Require express
+// designate use of express
 var express = require("express");
 
 // Set-up + initiate PORT
 var PORT = process.env.PORT || 3000;
 
-// Invoke express
+// Initiate express
 var app = express();
 
 // static content for the app from the "public" directory
