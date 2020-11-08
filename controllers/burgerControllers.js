@@ -19,7 +19,7 @@ router.get("/", function (req, res) {
 });
 
 // POST
-router.post("/api/burgers", function (req, res) {
+router.post("/public/assets/js/burgers.js", function (req, res) {
   burger.insertOne(
     // set status for table
     ["name", "devoured"],
@@ -32,7 +32,7 @@ router.post("/api/burgers", function (req, res) {
 });
 
 // PUT
-router.put("/api/burgers/:id", function (req, res) {
+router.put("/public/assets/js/burgers.js/:id", function (req, res) {
   var condition = "id = " + req.params.id;
   // condition of to be consumed or already consumed/devoured
   console.log("condition", condition);
@@ -53,7 +53,7 @@ router.put("/api/burgers/:id", function (req, res) {
 });
 
 // DELETE
-router.delete("/api/burgers/:id", function (req, res) {
+router.delete("/public/assets/js/burgers.js/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
   burger.delete(condition, function (result) {
