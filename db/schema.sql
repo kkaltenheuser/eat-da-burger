@@ -7,11 +7,11 @@ CREATE DATABASE burger_db;
 USE burger_db;
 
 -- Create the table plans.
-CREATE TABLE burger (
+CREATE TABLE burgers (
   id int NOT NULL AUTO_INCREMENT,
   burger_name varchar(300) NOT NULL,
   devoured BOOLEAN DEFAULT false,
   PRIMARY KEY (id)
 );
 
-SELECT * FROM burger;
+SELECT * FROM burgers;
