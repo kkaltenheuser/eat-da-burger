@@ -10,11 +10,8 @@ USE burger_db;
 CREATE TABLE burger (
   id int NOT NULL AUTO_INCREMENT,
   burger_name varchar(300) NOT NULL,
-  devoured BOOLEAN DEFAULT,
+  devoured BOOLEAN DEFAULT false,
   PRIMARY KEY (id)
 );
-
--- Insert a set of records.
-INSERT INTO burger (burger) VALUES ('Build Your Own Burger.');
 
 SELECT * FROM burger;
