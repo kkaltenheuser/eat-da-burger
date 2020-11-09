@@ -5,7 +5,7 @@ var express = require("express");
 var router = express.Router();
 
 // IMPORT the models directory to use its database
-var burger = require("../models/burger.js");
+var burger = require("../models/burgers");
 
 // CREATE all routes
 router.get("/", function (req, res) {
