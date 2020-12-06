@@ -14,10 +14,7 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kkaltenheuser/eat-da-burger/issues"
-  },
-  "homepage": "https://github.com/kkaltenheuser/eat-da-burger#readme",
+ 
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
