@@ -1,7 +1,7 @@
 // dependencies
 
 // designate use of dotenv
-require("dotenv").config();
+var require("dotenv").config();
 
 // designate use of express
 var express = require("express");
